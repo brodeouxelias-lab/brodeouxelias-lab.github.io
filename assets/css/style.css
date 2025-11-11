@@ -1,60 +1,86 @@
-/* Algemene body instellingen */
+/* Basisinstellingen */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #2c3e50;
     display: flex;
-    background-color: #f9f9f9;
-    color: #333;
 }
 
 /* Sidebar */
 .sidebar {
     position: fixed;
-    left: 0;
     top: 0;
-    width: 250px;
+    left: 0;
+    width: 280px;
     height: 100%;
-    background-color: #2c3e50;
+    background-color: #34495e;
     color: #ecf0f1;
     padding: 20px;
     overflow-y: auto;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
 }
 
 .sidebar h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-top: 0;
+    border-bottom: 1px solid #7f8c8d;
+    padding-bottom: 10px;
 }
 
 .sidebar a {
     display: block;
     color: #ecf0f1;
     text-decoration: none;
-    margin: 8px 0;
+    margin: 10px 0;
     font-size: 1em;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
-    color: #3498db;
+    color: #1abc9c;
 }
 
 /* Content area */
 .content {
-    margin-left: 270px; /* Sidebar width + padding */
+    margin-left: 300px; /* Sidebar width + spacing */
     padding: 40px;
     max-width: 1200px;
 }
 
-/* Markdown headings */
+/* Typografie voor headings */
 .content h1, .content h2, .content h3 {
     color: #2c3e50;
+    margin-top: 1.5em;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 10px;
+}
+
+.content h2 {
+    font-size: 2em;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+.content h3 {
+    font-size: 1.5em;
+}
+
+/* Paragraphs */
+.content p {
+    line-height: 1.7;
+    margin: 10px 0;
 }
 
 /* Tables */
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 table, th, td {
@@ -62,7 +88,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
 }
 
@@ -80,7 +106,7 @@ th {
     text-decoration: underline;
 }
 
-/* Scrollbar style */
+/* Scrollbar styling */
 .sidebar::-webkit-scrollbar, .content::-webkit-scrollbar {
     width: 8px;
 }
@@ -90,7 +116,8 @@ th {
     border-radius: 4px;
 }
 
- (max-width: 768px) {
+/* Responsief voor mobiel */
+@media (max-width: 768px) {
     .sidebar {
         position: relative;
         width: 100%;
