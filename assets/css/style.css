@@ -1,70 +1,103 @@
-/* Algemene styling voor Future Roleplay APV 2025 */
-
+/* Basis layout */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    background-color: #f7f7f7;
     color: #333;
-    background-color: #f9f9f9;
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header .last-updated {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Navigation / TOC */
+nav {
+    background-color: #e0e0e0;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-left: 4px solid #004080;
+}
+
+nav h2 {
+    margin-top: 0;
+    color: #004080;
+}
+
+/* Main content */
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 h1, h2, h3, h4 {
-    color: #222;
-    margin-top: 1.5em;
-}
-
-h1 {
-    font-size: 2.5em;
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.3em;
+    color: #004080;
 }
 
 h2 {
-    font-size: 2em;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.2em;
+    margin-top: 1.5em;
 }
 
 h3 {
-    font-size: 1.5em;
+    margin-top: 1.2em;
 }
 
 p {
+    margin: 0.8em 0;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 2em;
     margin-bottom: 1em;
 }
 
+/* Footer */
+footer {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}
+
+footer .disclaimer {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Links */
 a {
-    color: #0066cc;
+    color: #004080;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-code {
-    background-color: #eee;
-    padding: 2px 5px;
-    border-radius: 3px;
-}
-
-ul, ol {
-    margin-left: 1.5em;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
-    border-radius: 8px;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.9em;
-    text-align: center;
-    color: #777;
 }
