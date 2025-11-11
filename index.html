@@ -1,253 +1,474 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APV Dordrecht 2025</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Algemene Plaatselijke Verordening — Dordrecht 2025</title>
+
+<style>
+/* ===== Basis & layout ===== */
+:root{
+  --sidebar-w: 300px;
+  --accent:#1abc9c;
+  --bg:#f6f8fa;
+  --panel:#ffffff;
+  --muted:#7f8c8d;
+  --text:#1f2933;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Sidebar */
+.sidebar{
+  position:fixed;left:0;top:0;width:var(--sidebar-w);height:100vh;background:#0f1720;color:#ecf8f6;padding:26px 18px;overflow:auto;border-right:1px solid rgba(255,255,255,0.03);
+  box-shadow:2px 0 10px rgba(2,6,23,0.06);
+}
+.sidebar h1{font-size:18px;margin:0 0 12px;color:#f1f8f7}
+.sidebar p{font-size:13px;color:rgba(255,255,255,0.75);margin:0 0 18px}
+.sidebar nav ul{list-style:none;padding:0;margin:0}
+.sidebar nav li{margin:6px 0}
+.sidebar nav a{display:block;padding:8px 10px;border-radius:6px;color:rgba(255,255,255,0.9);font-size:14px}
+.sidebar nav a:hover{background:rgba(255,255,255,0.03);color:var(--accent)}
+
+/* Highlight current based on :target - optional UX helper */
+.sidebar nav a:focus, .sidebar nav a:active{outline:none}
+
+/* Content area */
+main{
+  margin-left:var(--sidebar-w);padding:34px;min-height:100vh;
+  display:block;
+}
+.container{
+  max-width:1100px;margin:0 auto;
+}
+.header{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;
+}
+.header h0{margin:0}
+.meta{color:var(--muted);font-size:13px}
+
+/* Panel */
+.panel{
+  background:var(--panel);padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(20,30,40,0.04);
+  margin-bottom:20px;
+}
+
+/* Typography */
+h1{font-size:28px;color:var(--text);margin:4px 0 8px}
+h2{font-size:20px;margin:18px 0 8px;color:var(--text);border-bottom:1px solid #eef2f4;padding-bottom:8px}
+h3{font-size:16px;margin:14px 0;color:var(--text)}
+p{line-height:1.65;margin:10px 0;color:#2b3942}
+ul{margin:8px 0 16px 20px}
+ol{margin:8px 0 16px 20px}
+code{background:#f4f6f8;padding:2px 6px;border-radius:4px;font-family:monospace;font-size:13px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th,td{padding:10px;border:1px solid #e6eef2;font-size:14px}
+th{background:#f8fafb}
+
+/* Responsive */
+@media screen and (max-width:980px){
+  :root{--sidebar-w:220px}
+  .sidebar{width:220px}
+  main{margin-left:220px;padding:20px}
+}
+@media screen and (max-width:720px){
+  .sidebar{position:relative;width:100%;height:auto;border-right:none;box-shadow:none;padding:16px}
+  main{margin-left:0;padding:16px}
+  .header{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
 <body>
-  <aside class="sidebar">
-    <h2>APV Dordrecht</h2>
-    <nav>
-      <ul>
-        <li><a href="#algemene-bepalingen">Algemene Bepalingen</a></li>
-        <li><a href="#overtredingen">Overtredingen</a></li>
-        <li><a href="#fail-rp">Fail-RP</a></li>
-        <li><a href="#powergamen">Powergamen</a></li>
-        <li><a href="#out-of-character">Out of Character</a></li>
-        <li><a href="#safezone">Safezone</a></li>
-        <li><a href="#new-life-rule">New Life Rule</a></li>
-        <li><a href="#rdm">RDM</a></li>
-        <li><a href="#nvol">No Value of Life</a></li>
-        <li><a href="#erp">ERP</a></li>
-        <li><a href="#meta-gaming">Metagaming</a></li>
-        <li><a href="#exploits">Exploits</a></li>
-        <li><a href="#cheats">Cheats</a></li>
-        <li><a href="#overheidskleding">(Overheids)kleding</a></li>
-        <li><a href="#combatlogging">Combatlogging</a></li>
-        <li><a href="#gebruik-van-report">Gebruik van /report</a></li>
-        <li><a href="#alt-characters">Alt Characters</a></li>
-        <li><a href="#voertuighandelaar-voertuigmeetings">Voertuighandelaar</a></li>
-        <li><a href="#gebruik-van-voertuigen">Gebruik voertuigen</a></li>
-        <li><a href="#belediging">Belediging</a></li>
-        <li><a href="#overvallen-oplichten">Overvallen & Oplichten</a></li>
-        <li><a href="#gedrag-van-ambtenaren">Gedrag Ambtenaren</a></li>
-        <li><a href="#gedrag-tegen-overheidsmedewerkers">Tegen Ambtenaren</a></li>
-        <li><a href="#roleplay-ledenaantal-criminele-organisaties">Criminele Organisaties</a></li>
-        <li><a href="#ontsnappen-uit-het-cellencomplex">Ontsnappen Cellencomplex</a></li>
-        <li><a href="#witwassen-winkel-en-bankovervallen-overige-criminaliteit">Witwassen & Overvallen</a></li>
-        <li><a href="#jobhoppen">Jobhoppen</a></li>
-        <li><a href="#stemherkenning">Stemherkenning</a></li>
-        <li><a href="#omgaan-met-f6">Omgaan met F6</a></li>
-        <li><a href="#loodsen">Loodsen</a></li>
-        <li><a href="#eerlijkheid-in-tickets">Eerlijkheid in Tickets</a></li>
-        <li><a href="#baiting">Baiting</a></li>
-        <li><a href="#dordrecht">Dordrecht Regels</a></li>
-        <li><a href="#gangs-regels">Gangs-regels</a></li>
-        <li><a href="#tijdelijke-bepalingen">Tijdelijke bepalingen</a></li>
-      </ul>
-    </nav>
-  </aside>
 
-  <main>
-    <section class="content">
-      <!-- Hier komt de volledige APV die je al had -->
-      <h1>Algemene Plaatselijke Verordening – Dordrecht 2025</h1>
-      <p><strong>Laatst aangepast:</strong> 11/11/2025</p>
-      <hr>
-      <!-- ⬇️ plak hier de volledige APV-inhoud die je eerder gaf -->
-      <div class="apv-text">
-        ---
+<!-- SIDEBAR -->
+<aside class="sidebar" aria-label="Inhoudsopgave APV Dordrecht">
+  <h1>APV — Dordrecht 2025</h1>
+  <p>Volledig samengestelde Algemene Plaatselijke Verordening — alle artikelen klikbaar.</p>
 
-## Algemene Bepalingen
+  <nav aria-label="Hoofdnavigatie APV">
+    <ul>
+      <li><a href="#algemene-bepalingen">Algemene Bepalingen</a></li>
+      <li><a href="#reikwijdte">— Reikwijdte</a></li>
+      <li><a href="#geldigheid">— Geldigheid</a></li>
+      <li><a href="#strafbepaling">— Strafbepaling</a></li>
 
-### Reikwijdte
-Deze Algemene Plaatselijke Verordening (APV) geldt als aanvulling op het Nederlands recht en is van toepassing binnen de gemeente Dordrecht. De APV biedt een kader voor in-game en out-of-character handhaving en bestraffing.  
+      <li><a href="#overtredingen">Overtredingen – Openbare Orde (RP)</a></li>
+      <li><a href="#fail-rp">— Fail-RP</a></li>
+      <li><a href="#powergamen">— Powergamen</a></li>
+      <li><a href="#out-of-character">— Out of Character</a></li>
+      <li><a href="#safezone">— Safezone</a></li>
+      <li><a href="#new-life-rule">— New Life Rule</a></li>
+      <li><a href="#rdm">— RDM (Random Deathmatch)</a></li>
+      <li><a href="#nvol">— No Value of Life (NVOL)</a></li>
+      <li><a href="#erp">— ERP (Erotische Roleplay)</a></li>
+      <li><a href="#zelfmoord-rp">— Zelfmoord-RP</a></li>
+      <li><a href="#meta-gaming">— Meta-gaming</a></li>
+      <li><a href="#exploits">— Exploits & Bugs</a></li>
+      <li><a href="#cheats">— Cheats & Third-party tools</a></li>
+      <li><a href="#overheidskleding">(— Overheids)kleding</a></li>
+      <li><a href="#combatlogging">— Combatlogging</a></li>
+      <li><a href="#talen-in-de-stad">— Talen in de stad</a></li>
+      <li><a href="#gebruik-van-report">— Gebruik van /report</a></li>
+      <li><a href="#alt-characters">— Alt Characters</a></li>
+      <li><a href="#voertuighandelaar-voertuigmeetings">— Voertuighandelaar & meetups</a></li>
+      <li><a href="#gebruik-van-voertuigen">— Gebruik van voertuigen</a></li>
+      <li><a href="#belediging">— Belediging & Haat</a></li>
+      <li><a href="#overvallen-oplichten">— Overvallen & Oplichten</a></li>
+      <li><a href="#gedrag-van-ambtenaren">— Gedrag van ambtenaren</a></li>
+      <li><a href="#gedrag-tegen-overheidsmedewerkers">— Gedrag tegen ambtenaren</a></li>
+      <li><a href="#roleplay-ledenaantal-criminele-organisaties">— Criminele organisaties</a></li>
+      <li><a href="#ontsnappen-uit-het-cellencomplex">— Ontsnappen uit cellencomplex</a></li>
+      <li><a href="#witwassen-winkel-en-bankovervallen-overige-criminaliteit">— Witwassen & Overvallen</a></li>
+      <li><a href="#jobhoppen">— Jobhoppen</a></li>
+      <li><a href="#stemherkenning">— Stemherkenning</a></li>
+      <li><a href="#omgaan-met-f6">— Omgaan met F6</a></li>
+      <li><a href="#loodsen">— Loodsen</a></li>
+      <li><a href="#eerlijkheid-in-tickets">— Eerlijkheid in tickets</a></li>
+      <li><a href="#baiting">— Baiting</a></li>
 
-### Geldigheid
-- Bij wijzigingen in wetgeving na het begaan van een feit gelden de voor de verdachte meest gunstige bepalingen.  
-- Medewerkers mogen niet beslissen over zaken die henzelf, familie of vrienden betreffen.  
-- Valse verklaringen naar medewerkers kunnen leiden tot verzwaring van straf.  
-- Tickets moeten binnen 2 weken worden aangemaakt voor mogelijke terugbetaling of acties.
+      <li><a href="#dordrecht-specific">Dordrecht-specifieke regels</a></li>
+      <li><a href="#gangs-regels">Gangs-regels</a></li>
+      <li><a href="#tijdelijke-bepalingen">Tijdelijke bepalingen</a></li>
+    </ul>
+  </nav>
+</aside>
 
-### Strafbepaling
-Strafcategorieën:
-1. **Categorie 1:** Waarschuwing + 100 uur taakstraf (max. 3 waarschuwingen per maand)  
-2. **Categorie 2:** Ban 1 dag + 50 uur taakstraf  
-3. **Categorie 3:** Ban 2 dagen + 50 uur taakstraf  
-4. **Categorie 4:** Ban 3 dagen + 50 uur taakstraf  
-5. **Categorie 5:** Ban 1 week + 50 uur taakstraf  
-6. **Categorie 6:** Ban 1 maand + 50 uur taakstraf  
-7. **Categorie 7:** Permanente ban  
-8. **Categorie 8:** Account wipe  
-
-Opmerkingen:
-- Strafen van categorie 5–7 kunnen preventief worden opgelegd.  
-- Context, eerdere overtredingen en situatie kunnen leiden tot aanpassing van de straf.  
-- Mondelinge waarschuwingen moeten worden geregistreerd.  
-- Omzeilen van een straf resulteert in categorie 7.  
-- Bans zijn gebonden aan IP en licentie.  
-- Waarschuwingen vervallen na 3 maanden.
-
----
-
-## Overtredingen – Verstoring openbare orde (RP)
-
-### Fail-RP
-Verboden is roleplay van zeer slechte kwaliteit uit te voeren of gedrag te vertonen dat roleplay verstoort.  
-**Sanctie:** Categorie 1  
-
-### Powergamen
-Het manipuleren van roleplay om een oneerlijke of onrealistische wending te geven is verboden.  
-**Sanctie:** Categorie 1  
-
-### Out Of Character (OOC)
-Het gebruik van OOC-termen, /looc verkeerd of toxic opmerkingen is verboden.  
-**Sanctie:** Categorie 1  
-
-### Safezone
-Safezones mogen niet worden gebruikt om illegale activiteiten of roleplay te ontlopen.  
-**Sanctie:** Categorie 1  
-
-### New Life Rule
-Overleden karakters vergeten hun laatste roleplay. Betreden van het overlijdensgebied is 15 minuten verboden.  
-**Sanctie:** Categorie 4  
-
-### RDM (Random Deathmatch)
-Onnodig mishandelen, vermoorden of lastigvallen zonder RP-doel is verboden, inclusief dieren.  
-**Sanctie:** Categorie 1  
-
-### No Value of Life (NVOL)
-Geen waarde hechten aan leven is verboden. Uitzonderingen bij directe dreiging toegestaan.  
-**Sanctie:** Categorie 2  
-
-### ERP (Erotische Roleplay)
-Erotische roleplay is verboden.  
-**Sanctie:** Categorie 7  
-
-### Zelfmoord-RP
-Zelfmoordscenarios zijn verboden, tenzij goedgekeurd door staff.  
-**Sanctie:** Categorie 8  
-
-### Meta-gaming
-Gebruik van informatie buiten het karakter is verboden.  
-**Sanctie:** Categorie 1  
-
-### Exploits
-Bugs of exploits misbruiken voor voordeel is verboden.  
-**Sanctie:** Categorie 7  
-
-### Cheats
-Gebruik van cheats of externe tools voor voordeel is verboden.  
-**Sanctie:** Categorie 7  
-
-### (Overheids)kleding
-Kleding moet realistisch zijn en door de werkgever verstrekte kleding gedragen worden. Misbruik of foutief dragen leidt tot waarschuwing en mogelijk straf.  
-**Sanctie:** Eerst mondeling, daarna Categorie 1  
-
-### Combatlogging
-Het verlaten van game tijdens RP zonder geldige reden is verboden.  
-**Sanctie:** Categorie 5  
-
-### Talen in de stad
-Voertalen: Nederlands en Engels. Beledigende of provocerende talen zijn verboden.  
-**Sanctie:** Uitsluiting of Categorie 2  
-
-### Gebruik van /report
-Rapporteer overtredingen zonder RP te beïnvloeden. Misbruik leidt tot Categorie 1  
-
-### Alt Characters
-Alt-accounts voor voordeel of criminele activiteiten zijn verboden.  
-**Sanctie:** Categorie 7–8  
-
-### Voertuighandelaar / Voertuigmeetings
-Dealervergunningen en regels omtrent voertuigen gelden strikt.  
-**Sanctie:** Categorie 1  
-
-### Gebruik van voertuigen
-Overheids- of jobvoertuigen mogen niet voor illegale activiteiten worden gebruikt.  
-**Sanctie:** Categorie 1–2 afhankelijk van overtreding  
-
-### Belediging
-Beledigen met grensoverschrijdende opmerkingen of ziektes is verboden.  
-**Sanctie:** Twee weken, drie maanden, of permanente ban  
-
-### Overvallen & Oplichten
-Overvallen enkel bij criminele activiteiten, regels voor timing, voertuigen en safezones gelden.  
-**Sanctie:** Minimaal Categorie 1  
-
-### Gedrag van Ambtenaren
-Ambtenaren moeten eerlijk handelen en verboden activiteiten vermijden.  
-**Sanctie:** Categorie 6  
-
-### Gedrag tegen overheidsmedewerkers
-Valse meldingen of geweld tegen ambtenaren is verboden.  
-**Sanctie:** Categorie 5–6  
-
-### Roleplay & Ledenaantal Criminele Organisaties
-Ledenlimiet en samenwerking met andere organisaties strikt gereguleerd.  
-**Sanctie:** Door CA  
-
-### Ontsnappen uit het cellencomplex
-Ontsnappen toegestaan enkel bij goedgekeurde RP.  
-**Sanctie:** Categorie 1  
-
-### Witwassen, Winkel- en bankovervallen & overige criminaliteit
-Regels voor witwassen, locaties, prop gebruik en scenario verplichtingen.  
-**Sanctie:** Categorie 1  
-
-### Jobhoppen
-Minimale wachttijd voor wisseling van baan of organisatie.  
-**Sanctie:** Categorie 1  
-
-### Stemherkenning
-Herkenning van spelersstem toegestaan indien correct toegepast.  
-**Sanctie:** Categorie 1  
-
-### Omgaan met F6
-Gebruiken van F6 voor RP moet correct verlopen.  
-**Sanctie:** Categorie 5  
-
-### Loodsen
-Regels omtrent eigendom, verhuur en overdracht van loodsen.  
-**Sanctie:** Categorie 3–5 afhankelijk van bedrag  
-
-### Eerlijkheid in tickets
-Eerlijke informatie verstrekken is verplicht.  
-**Sanctie:** Categorie 5  
-
-### Baiting
-Uitlokken zonder scenario is verboden.  
-**Sanctie:** Categorie 1  
-
----
-
-## Dordrecht-specifieke regels
-(Artikelen N-1 t/m N-4 herschreven voor Dordrecht)  
-- Schieten vanaf vaste grond of water op overheidstroepen is verboden  
-- Helikopters/vliegtuigen laden enkel binnen straal 50 meter van helipad  
-- Samenwerking tussen criminele organisaties zonder RP is verboden  
-- Campen bij niet-actieve locaties verboden  
-
----
-
-## Gangs-regels
-- Voertuigen alleen in beslag bij geldige reden  
-- Nepmeldingen, confisqueren zonder RP is verboden  
-- Overtredingen leiden tot sanctie voor gehele organisatie  
-
----
-
-## Tijdelijke bepalingen
-- Geen FailRP, RDM, Cheats, Exploits, Spam, Cop-baiting, Combat Logging  
-- Realistische omgang met leven en voertuigen verplicht  
-- OOC-communicatie beperkt  
-- Overheidsobjecten niet voor privégebruik  
-
----
+<!-- MAIN CONTENT -->
+<main>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>Algemene Plaatselijke Verordening — Dordrecht 2025</h1>
+        <div class="meta">Laatst aangepast: 11/11/2025 — Geïntegreerde APV (samengevoegd, neutraal, Dordrecht)</div>
       </div>
-    </section>
-  </main>
+    </header>
+
+    <article class="panel apv-text">
+
+      <!-- ========== ALGEMENE BEPALINGEN ========== -->
+      <h2 id="algemene-bepalingen">Algemene Bepalingen</h2>
+
+      <h3 id="reikwijdte">Reikwijdte</h3>
+      <p>
+        Deze Algemene Plaatselijke Verordening (APV) is van toepassing op het gehele grondgebied van de gemeente <strong>Dordrecht</strong>. De APV vormt een aanvullend, lokaal reglementair kader naast het nationale recht en is bedoeld voor de handhaving van orde en veiligheid binnen de in-game en out-of-character contexten die door de gemeenschap worden gehanteerd.
+      </p>
+      <p>
+        De bepalingen in deze verordening gelden voor alle deelnemers, ongeacht of zij inwoners, bezoekers of (tijdelijke) organisaties zijn, wanneer deze zich binnen het werkingsgebied bevinden. De APV geldt zowel voor reguliere in-game situaties als voor staff-afhandeling en administratieve procedures.
+      </p>
+
+      <h3 id="geldigheid">Geldigheid</h3>
+      <p>
+        1. Wijzigingen van hogere wetgeving (nationaal of internationaal) die na het begaan van een feit worden toegepast, dienen te worden geïnterpreteerd in het voordeel van de betrokken persoon; indien regelgeving gunstiger is voor de verdachte, geldt de gunstigere bepaling.
+      </p>
+      <p>
+        2. Een staff-lid mag niet meebeslissen in een zaak waarin hij of zij zelf, familie of directe bekenden betrokken zijn. In geval van belangenvermenging treedt het bevoegde orgaan terug en wordt de zaak aan alternatieve bevoegde leden voorgelegd.
+      </p>
+      <p>
+        3. Valse verklaringen, bewijsmanipulatie of pogingen tot doxing leiden tot zwaardere sancties en kunnen leiden tot permanente maatregelen.
+      </p>
+      <p>
+        4. Klachten, tickets of verzoeken om herziening van een beslissing dienen binnen de gestelde termijn (standaard twee weken) te worden ingediend, tenzij in bijzondere gevallen anders wordt bepaald.
+      </p>
+
+      <h3 id="strafbepaling">Strafbepaling (categorieën)</h3>
+      <p>
+        De sancties in deze APV zijn opgedeeld in categorieën. De rangschikking is richtlijn; staff heeft discretionaire bevoegdheid om, op basis van redelijkheid en billijkheid, af te wijken.
+      </p>
+
+      <table>
+        <thead><tr><th>Categorie</th><th>Sanctie</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Waarschuwing + 100 uur taakstraf</td></tr>
+          <tr><td>2</td><td>Ban 1 dag + 150 taken</td></tr>
+          <tr><td>3</td><td>Ban 2 dagen + 300 taken</td></tr>
+          <tr><td>4</td><td>Ban 3 dagen + 500 taken</td></tr>
+          <tr><td>5</td><td>Ban 1 week + 750 taken</td></tr>
+          <tr><td>6</td><td>Ban 1 maand + 1000 taken</td></tr>
+          <tr><td>7</td><td>Permanente ban</td></tr>
+          <tr><td>8</td><td>Permanente ban + account wipe</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Extra: Bij structurele herhaling van overtredingen worden straffen verzwaard. Preventieve maatregelen (zoals tijdelijke schorsing) kunnen worden opgelegd bij concrete aanwijzingen van ernstig misbruik.
+      </p>
+
+      <!-- ========== OVERTREDINGEN - OPENBARE ORDE ========== -->
+      <h2 id="overtredingen">Overtredingen – Verstoring openbare orde (roleplay & algemeen)</h2>
+
+      <h3 id="fail-rp">Artikel — Fail-RP (slecht roleplay)</h3>
+      <p>
+        Het opzettelijk uitvoeren van roleplay van ondeugdelijk of manifest onrealistisch karakter, zodanig dat de beleefbaarheid van anderen substantieel wordt aangetast, is verboden.
+      </p>
+      <p><strong>Voorbeelden:</strong></p>
+      <ul>
+        <li>Een gewond personage laat zonder realistische behandeling direct normale acties uitvoeren (bijv. onmiddellijk rennen na een beenwond zonder reden).</li>
+        <li>Onderbreken van lopende, zinvolle roleplay met evidente niet-ingecalculeerde reacties.</li>
+      </ul>
+      <p><strong>Sanctie:</strong> Categorie 1 (verzwaard naar 2 bij recidive of bijzonder storend gedrag).</p>
+
+      <h3 id="powergamen">Artikel — Powergamen</h3>
+      <p>
+        Het gebruiken van onrealistische of onrechtmatige acties die een ander spelerkarakter op oneerlijke wijze benadelen (bijv. onbesproken ‘instant wins’, het ontzeggen van reactie-mogelijkheden zonder RP) is verboden.
+      </p>
+      <p><strong>Voorbeelden:</strong></p>
+      <ul>
+        <li>Onmogelijk hoge mechanische reacties (bv. direct vastbinden of ontwapenen via enkel /me zonder roleplay).</li>
+        <li>Gebruik van spelmechanica op een manier die RP onmogelijk maakt (bv. exploiteren van animatie-bugs om onkwetsbaar te zijn).</li>
+      </ul>
+      <p><strong>Sanctie:</strong> Categorie 1–3 (afhankelijk van ernst en gevolg).</p>
+
+      <h3 id="out-of-character">Artikel — Out-of-Character (OOC)</h3>
+      <p>
+        OOC-informatie (informatie verkregen buiten de roleplay-context) mag niet in-character gebruikt worden. Daarnaast is het onacceptabel om via in-game chat of voice kanalen OOC opmerkingen te maken die RP ondermijnen.
+      </p>
+      <p><strong>Voorbeelden van verboden OOC-gebruik:</strong> /looc misbruik, directe verwijzing naar staff-procedures in RP, of het waarschuwen van betrokkenen over tickets binnen RP.</p>
+      <p><strong>Sanctie:</strong> Categorie 1–3 (afhankelijk van de impact).</p>
+
+      <h3 id="safezone">Artikel — Safezone</h3>
+      <p>
+        Safezones (bepaalde locaties door staff aangewezen) zijn gebieden met verhoogde bescherming. Het is verboden binnen een safezone illegale of agressieve handelingen te ondernemen met de verwachting geen consequenties te ondervinden.
+      </p>
+      <p><strong>Voorbeelden:</strong> geweldpleging, ontvoeringen of het voortzetten van criminele acties binnen gemarkeerde safezones.</p>
+      <p><strong>Sanctie:</strong> Categorie 2–4 afhankelijk van ernst.</p>
+
+      <h3 id="new-life-rule">Artikel — New Life Rule</h3>
+      <p>
+        Indien een karakter sterft in RP, dient de speler het laatste RP-gebeuren te vergeten (New Life Rule). Het karakter mag niet in hetzelfde scenario terugkeren of direct dezelfde informatie gebruiken.
+      </p>
+      <p>
+        Na overlijden geldt een afkoelperiode van vijftien minuten voor terugkeer op de locatie van overlijden (kan per situatie worden aangepast).
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 4 bij overtreding.</p>
+
+      <h3 id="rdm">Artikel — RDM (Random Deathmatch)</h3>
+      <p>
+        Willekeurig verwonden of doden van spelers zonder valide RP-reden is verboden. RDM omvat situaties waarin spelers zonder voorafgaande of lopende vrijblijvende RP-reden gewelddadig worden aangevallen.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 3–5 afhankelijk van omstandigheden en schade.</p>
+
+      <h3 id="nvol">Artikel — No Value of Life (NVOL)</h3>
+      <p>
+        Het tonen van geen respect voor het leven van het personage (bijv. herhaaldelijk opzettelijk risico nemen zonder reden, zelfmoord-achtige acties zonder RP) is verboden. NVOL-overtredingen worden strikt bestraft.
+      </p>
+      <p><strong>Sanctie:</strong> Minimaal Categorie 2; verzwaring bij herhaling.</p>
+
+      <h3 id="erp">Artikel — ERP (Erotische Roleplay)</h3>
+      <p>
+        Erotische roleplay (ERP) of expliciete seksuele content in RP of openbare kanalen is verboden, behoudens zeer beperkte, staff-goedgekeurde uitzonderingen in afgesloten, expliciet daarvoor bedoelde situaties. Dit omvat expliciete seksuele handelingen, genitalia-beschrijvingen of ander expliciet erotisch materiaal.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 6–8 afhankelijk van ernst en context.</p>
+
+      <h3 id="zelfmoord-rp">Artikel — Zelfmoord-RP</h3>
+      <p>
+        Zelfmoord-scenario’s zijn verboden tenzij vooraf uitdrukkelijk toegestaan door staff binnen duidelijk omschreven en verantwoord RP-kader. Dit om triggers en onverantwoorde content te voorkomen.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 6–8 bij overtreding.</p>
+
+      <h3 id="meta-gaming">Artikel — Meta-gaming</h3>
+      <p>
+        Het gebruiken van informatie die buiten het karakter is verkregen (bijv. via Discord, livestreams, of privékanalen) om in-character voordeel te behalen is verboden.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 2–4; structureel misbruik leidt tot hogere maatregelen.</p>
+
+      <h3 id="exploits">Artikel — Exploits & Bugs</h3>
+      <p>
+        Het doelbewust misbruiken van bekende of onbekende bugs, glitches en niet-bedoelde spelmechanica is verboden. Gevonden exploits dienen direct te worden gerapporteerd via de juiste ticketkanalen.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 5–8; in ernstige gevallen: account wipe en permanente ban.</p>
+
+      <h3 id="cheats">Artikel — Cheats, externe tools en hardware</h3>
+      <p>
+        Het gebruik van cheats, hacks, third-party tools of hardware-modificaties die een oneerlijk voordeel verschaffen is verboden en leidt tot maximale sancties. Dit omvat aimbots, wallhacks, manipulerende drivers of DMA-apparatuur.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 7–8 (permanent); bij bewijs van hardwarecheats kan aanvullende blacklist-maatregel volgen.</p>
+
+      <h3 id="overheidskleding">(Artikel) — (Overheids)kleding</h3>
+      <p>
+        Het dragen van kleding die aan een overheidsfunctie refereert is uitsluitend toegestaan voor spelers die die functie bekleden of expliciet toestemming hebben gekregen. Startkleding moet realistisch worden aangepast; gesloten armen, geen invis-limb-bugs, etc.
+      </p>
+      <p><strong>Sanctie:</strong> Mondelinge waarschuwing gevolgd door Categorie 1 bij onvoldoende naleving.</p>
+
+      <h3 id="combatlogging">Artikel — Combatlogging</h3>
+      <p>
+        Het abrupt verlaten van het spel of verlaten van de stad om straf of gevolgen van een actief scenario te vermijden is verboden. Bij onvoorziene technische problemen dient men dit snel te communiceren met betrokkenen of staff.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 4–6 bij opzettelijk verlaten; herhaalde overtreding leidt tot zwaardere straffen.</p>
+
+      <h3 id="talen-in-de-stad">Artikel — Talen in de stad</h3>
+      <p>
+        Nederlands en Engels zijn de voertalen binnen de stad voor roleplay en staff-procedures. Gebruik van andere talen is toegestaan mits dit de RP niet schaadt en niet provocerend of discriminerend wordt ingezet.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 1–2 bij provocatief of discriminerend taalgebruik.</p>
+
+      <h3 id="gebruik-van-report">Artikel — Gebruik van /report</h3>
+      <p>
+        Het in-game report-systeem dient gebruikt te worden voor het melden van overtredingen die niet ter plaatse kunnen worden opgelost. Misbruik van reports (spam, nepclaims) is verboden.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 2–3 bij spammen of misbruik; bij frauduleuze claims hogere straf.</p>
+
+      <h3 id="alt-characters">Artikel — Alt Characters (alt-accounts)</h3>
+      <p>
+        Het aanmaken en gebruiken van meerdere accounts ten behoeve van oneerlijk voordeel (geldverplaatsing, ontwijken van straffen, etc.) is verboden. Maximaal aantal alt-accounts en het gebruik daarvan worden door staff aangemerkt; misbruik leidt tot zware sancties.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 6–8 afhankelijk van de aard van het misbruik.</p>
+
+      <h3 id="voertuighandelaar-voertuigmeetings">Artikel — Voertuighandelaar en voertuigmeetings</h3>
+      <p>
+        Handel in voertuigen dient eerlijk en transparant te verlopen. Dealeroverdrachten en meetups waarbij voertuigen tentoongesteld of verhandeld worden dienen vergunning en regels te volgen (o.a. maximum aantal voertuigen op locatie).
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 1–4; bij frauduleus handelen zware sancties.</p>
+
+      <h3 id="gebruik-van-voertuigen">Artikel — Gebruik van voertuigen</h3>
+      <p>
+        Realistisch rijgedrag is verplicht. Het gebruiken van voertuigen als wapen (VDM), onrealistische stunt-driving, of delete/het “pitten” van voertuigen boven toegestane snelheden is verboden.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 2–5 afhankelijk van gevolg; bij massale VDM directe zwaardere maatregelen.</p>
+
+      <h3 id="belediging">Artikel — Belediging en haatdragend gedrag</h3>
+      <p>
+        Discriminerend, haatdragend of expliciet beledigend taalgebruik (bijvoorbeeld racistische of seksistische uitlatingen, ernstige bedreigingen of het misbruiken van ziektes als belediging) is ontoelaatbaar en wordt streng bestraft.
+      </p>
+      <p><strong>Sanctie:</strong> Escalerend — tijdelijke bans oplopend tot permanente bans afhankelijk van de ernst en herhaling.</p>
+
+      <h3 id="overvallen-oplichten">Artikel — Overvallen & Oplichten</h3>
+      <p>
+        Overvallen en oplichting zijn alleen toegestaan binnen de grenzen van realistische RP en de hier vastgestelde regels: bewijsvoering, timeframes, greenzone-regels en maximaal toegestane bedragen. Specifieke richtlijnen voor het starten, uitvoeren en afronden van overvallen zijn in bijlage opgenomen (o.a. limit van 2M voor scams zonder zwaar bewijs).
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 3–6; bij grootschalige fraude zwaardere maatregelen.</p>
+
+      <h3 id="gedrag-van-ambtenaren">Artikel — Gedrag van ambtenaren</h3>
+      <p>
+        Ambtenaren en personeelsleden van (fictieve) overheidsdiensten dienen onberispelijk gedrag te tonen en mogen geen illegale activiteiten plegen of profijt halen uit hun functie. Het bezit of doorverkopen van in beslag genomen goederen is verboden voor ambtenaren.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 6–8; ontslag uit functie kan volgen.</p>
+
+      <h3 id="gedrag-tegen-overheidsmedewerkers">Artikel — Gedrag tegen overheidsmedewerkers</h3>
+      <p>
+        Realistische interactie met hulpdiensten en ambtenaren is verplicht; misbruik of het doelbewust manipuleren van hulpdiensten is verboden.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 3–6.</p>
+
+      <h3 id="roleplay-ledenaantal-criminele-organisaties">Artikel — Roleplay & ledental criminele organisaties</h3>
+      <p>
+        Criminele organisaties (gangs) moeten zich registreren en hebben limieten qua leden en hangarounds; samenwerking tussen grote groepen vereist coördinatie via staff.
+      </p>
+      <p><strong>Sanctie:</strong> Orgaan-/organisatie-beslissing; bij overtreding sancties tot opschorting of ontbinding.</p>
+
+      <h3 id="ontsnappen-uit-het-cellencomplex">Artikel — Ontsnappen uit cellencomplex</h3>
+      <p>
+        Ontsnappingen zijn alleen toegestaan als onderdeel van uitgewerkte, goedgekeurde scenario’s. Non-scenario ontsnappingen worden bestraft.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 2–4.</p>
+
+      <h3 id="witwassen-winkel-en-bankovervallen-overige-criminaliteit">Artikel — Witwassen, winkel- en bankovervallen & overige criminaliteit</h3>
+      <p>
+        Witwassen en grootschalige criminaliteit zijn gereguleerd; regels voor locatie, prop-gebruik, timers en bewijsvoering moeten worden nageleefd. Campen op niet-actieve locaties wordt als misbruik gezien.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 3–7 afhankelijk van omvang.</p>
+
+      <h3 id="jobhoppen">Artikel — Jobhoppen</h3>
+      <p>
+        Wanneer een speler van baan verandert tussen ambtelijke functies of officiële groeperingen, geldt een wachttijd (bijv. 72 uur) om misbruik te voorkomen. Registratie en documentatie door werkgevers is verplicht.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 1–3; bij overtreding ook ontslag mogelijk.</p>
+
+      <h3 id="stemherkenning">Artikel — Stemherkenning</h3>
+      <p>
+        Herkennen van spelers op stem is toegestaan mits valide in-game context; het bewust vervormen van stem voor misleiding is verboden indien het onrealistische effecten heeft.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 1–3.</p>
+
+      <h3 id="omgaan-met-f6">Artikel — Omgaan met F6</h3>
+      <p>
+        Rapportages en overmeesteringsacties via F6-menu moeten gepaard gaan met realistische RP-handelingen; direct F6-gebruik zonder noodzakelijke RP stapsgewijze handelingen wordt aangeduid als F6-abuse.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 4–5.</p>
+
+      <h3 id="loodsen">Artikel — Loodsen</h3>
+      <p>
+        Regels voor eigendom, verhuur en handel in loodsen: schriftelijke contracten (/docu), transparante administratie en regels omtrent inactiviteit en re-toewijzing na lange inactiviteit (bv. 120 dagen) zijn van toepassing.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 3–5 afhankelijk van overtreding en schade.</p>
+
+      <h3 id="eerlijkheid-in-tickets">Artikel — Eerlijkheid in tickets</h3>
+      <p>
+        Ingediende tickets dienen waarheidsgetrouw te zijn en volledig. Opzettelijke misleiding of frauduleuze claims worden zwaar bestraft.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 4–6; bij herhaling hogere maatregelen.</p>
+
+      <h3 id="baiting">Artikel — Baiting</h3>
+      <p>
+        Het opzettelijk uitlokken van spelers zonder reëel scenario is verboden en ondermijnt eerlijke RP.
+      </p>
+      <p><strong>Sanctie:</strong> Categorie 2–4.</p>
+
+      <!-- ========== DORDRECHT-SPECIFIEK ========== -->
+      <h2 id="dordrecht-specific">Dordrecht — Specifieke regels</h2>
+      <p>
+        De volgende bepalingen gelden aanvullend voor Dordrecht, afgeleid uit eerdere lokale APV-bronnen en aangepast aan het uniforme beleid:
+      </p>
+
+      <h3 id="dordrecht-1">Artikel D-1 — Vuurwapen- en buitenband schietsituaties</h3>
+      <p>
+        Het is verboden om vanaf vaste grond of water op patrouillerende overheidseenheden te schieten zonder uitzondering; schieten vanaf inkomende schepen of vliegtuigen op niet-overheidseenheden is onder voorwaarden toegestaan.
+      </p>
+
+      <h3 id="dordrecht-2">Artikel D-2 — Inladen helikopters en vliegtuigen</h3>
+      <p>
+        Het laden van helikopters of vliegtuigen voor illegale goederen mag alleen binnen 50 meter van een aangewezen helipad/landingplaats, tenzij anders aangegeven door staff.
+      </p>
+
+      <h3 id="dordrecht-3">Artikel D-3 — Campen en pluklocaties</h3>
+      <p>
+        Campen bij (niet-actieve) drugslocaties, pluklocaties en depots is verboden; nabijheidsgrenzen en toetsing door staff worden toegepast.
+      </p>
+
+      <h3 id="dordrecht-4">Artikel D-4 — Speciale lokale bepalingen</h3>
+      <p>
+        Lokale regels betreffende voertuigen bij havens, vliegvelden en ziekenhuizen worden strikt gehandhaafd; misbruik kan leiden tot escalatie van sancties.
+      </p>
+
+      <!-- ========== GANGS REGELS ========== -->
+      <h2 id="gangs-regels">Gangs-regels — Criminele organisaties</h2>
+      <p>
+        Regels voor georganiseerde groepen en gangs zijn bedoeld om grootschalig misbruik te voorkomen en eerlijke RP te borgen.
+      </p>
+
+      <h3 id="g-voertuigen">G-1 — Inbeslagname en voertuigen</h3>
+      <p>
+        Een voertuig mag alleen in beslag genomen worden met duidelijke, gegronde reden en passende RP. Inbeslagname vereist follow-up RP en transparante registratie.
+      </p>
+
+      <h3 id="g-nepmeldingen">G-2 — Nepmeldingen en confisceren</h3>
+      <p>
+        Het bewust doen van nepmeldingen in de buurt van ganglocaties of het opzettelijk uitvoeren van handelingen om rivaliserende groepen te schaden zonder RP-motief is verboden.
+      </p>
+
+      <p><strong>Sanctie:</strong> Maatregelen tegen gehele organisatie mogelijk, waaronder opschorting of ontbinding, afhankelijk van ernst.</p>
+
+      <!-- ========== TIJDELIJKE BEPALINGEN ========== -->
+      <h2 id="tijdelijke-bepalingen">Tijdelijke bepalingen & slotbepalingen</h2>
+      <p>
+        Samenvatting van kernregels: geen FailRP, geen VDM/VDM-massaal, geen RDM, geen cheats, geen exploits, geen cop-baiting, geen spammen of onnodig combatlogging. Realistische omgang met voertuigen en wapens is verplicht. OOC-communicatie beperkt tot noodzakelijke gevallen.
+      </p>
+      <p>
+        Deze verordening is vastgesteld door het bevoegde orgaan en treedt in werking op datum van publicatie. Staff behoudt zich het recht voor om regels te interpreteren en in uitzonderlijke gevallen passende maatregelen te nemen.
+      </p>
+
+      <hr>
+
+      <footer style="font-size:13px;color:var(--muted);margin-top:12px">
+        Document: Gecombineerde APV — Dordrecht (versie 2025). Dit document is samengesteld uit meerdere lokale APV-bronnen en aangepast voor een uniforme, neutrale toepassing binnen Dordrecht. Raadpleeg staff voor procedurele vragen.
+      </footer>
+
+    </article>
+  </div>
+</main>
+
 </body>
 </html>
