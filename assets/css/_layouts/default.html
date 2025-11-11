@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future Roleplay APV 2025</title>
-    <link rel="stylesheet" href="/assets/ccs/style.css">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Algemene Plaatselijke Verordening – Custom Editie 2025</h1>
-        </header>
+    <header>
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <p class="last-updated">Laatst aangepast: 11/11/2025 om 16:14</p>
+        </div>
+    </header>
 
-        <main>
-            {{ content }}
-        </main>
+    <nav>
+        <div class="container">
+            <h2>Inhoudsopgave</h2>
+            {{ content | toc }}
+        </div>
+    </nav>
 
-        <footer>
-            Laatst aangepast: 11/11/2025 om 16:14 <br>
-            Disclaimer: De inhoud is uitsluitend bedoeld voor de interne en online weergave van Future Roleplay. Alle rechten voorbehouden.
-        </footer>
-    </div>
+    <main class="container">
+        {{ content }}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dordrecht Roleplay. Alle rechten voorbehouden.</p>
+            <p class="disclaimer">Disclaimer: Dit document is een richtlijn en kan worden aangepast door Staff of Hogerop.</p>
+        </div>
+    </footer>
 </body>
 </html>
